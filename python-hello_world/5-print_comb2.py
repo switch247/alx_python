@@ -1,6 +1,3 @@
 for i in range(100):
-    if i < 10:
-        print("0{}".format(i),end = ', ')
-    else:
-        print("{}".format(i), end = '\n' if i ==99 else ', ')
-        
+    print("{:02d}".format(i), end=', ' if i < 99 else '\n')
+# :2d means make their len 2 digits 0->00 11 ->11
