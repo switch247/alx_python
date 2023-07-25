@@ -7,7 +7,7 @@ def main_f(*argv):
         print("1 argument:")
         print("1: {}".format(sys.argv[1]))
     else:
-        print("{num_args} arguments:")
+        print("{} arguments:".format(num_args))
         for i in range(1, num_args + 1):
             print("{}: {}".format(i,sys.argv[i]))
 
