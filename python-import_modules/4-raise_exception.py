@@ -1,8 +1,4 @@
 def raise_exception():
-   try:
-     raise NameError('HiThere')
-   except NameError:
-        print('An exception flew by!')
-        raise
+    raise ('anything')
 if __name__== "__main__":
     raise_exception()
