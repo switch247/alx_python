@@ -9,4 +9,5 @@ def main_f(*argv):
     # 1: Hello
     # print(len(arg))
 if __name__ == "__main__":
-    main_f()
+    import sys
+    main_f(sys.argv[1])
