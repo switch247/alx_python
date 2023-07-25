@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 def main_f(*argv):
     if len(argv) == 0:
         print("0 arguments.")
@@ -9,4 +9,4 @@ def main_f(*argv):
     # 1: Hello
     # print(len(arg))
 if __name__ == "__main__":
-    main_f(1,2,3,4)
+    main_f()
