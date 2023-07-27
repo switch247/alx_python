@@ -1,4 +1,6 @@
 def best_score(a_dictionary):
-    return max(a_dictionary.items())
+    if a_dictionary:
+        return max(a_dictionary.items())[1]
+    return
 if __name__ == "__main__":
-    print(best_score({"a":2 ,"b":4}))
+    print(best_score({"2":3}))
