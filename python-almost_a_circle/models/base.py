@@ -6,4 +6,3 @@ class Base:
         else:
             __class__.__nb_objects +=1
             self.id=__class__.__nb_objects
-        
