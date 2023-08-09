@@ -49,6 +49,9 @@ class Rectangle(Base):
 
     def set_y(self, y):
         self.__y = y
+    __doc__="""
+this is documentation for my class
+"""
 
 __doc__="""
 this is documentation for my module
