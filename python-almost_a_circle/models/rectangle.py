@@ -1,4 +1,5 @@
-Base = __import__('base').Base
+# Base = __import__('base').Base
+from models.base import Base
 
 # The Rectangle class is a subclass of the Base class and represents a rectangle with width, height,
 # and position attributes.
