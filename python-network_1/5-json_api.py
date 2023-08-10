@@ -2,13 +2,13 @@ import sys
 import requests
 def search_user(letter):
     """ test"""
-    url = f"http://0.0.0.0:5000/search_user/?q={letter}"
+    url = f"http://0.0.0.0:5000/search_user"
     params = {"q": letter}
     try:
-        response =  requests.post(url, params=params)
+        response =  requests.post(url, data=params)
         data = response.json()
-        print(data)
-        print(response.params)
+        # print(data)
+        # print(response.params)
         if data:
             print(f"[{data['id']}] {data['name']}")
         else:
