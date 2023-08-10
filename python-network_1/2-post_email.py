@@ -1,26 +1,32 @@
 import requests
 import sys
-"""
-The `post_email` function sends a POST request to a specified URL with an email parameter.
 
-:param url: The URL where the email will be posted
-:param email: The email parameter is the email address that will be sent in the POST request to the
-specified URL
-"""
+# The `get_request_id` function is defined to retrieve the value of the `X-Request-Id` header from a
+# HTTP GET request to a specified URL.
+def get_request_id(*argv):
+    """
+    The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
+    'X-Request-Id' header from the response, and prints it.
+    """
+    try:
+        response = requests.get(sys.argv[1])
+        print(response.text)
 
-def post_email(url=sys.argv[1], email=sys.argv[2]):
-    """ffhh"""
-    data = {'email': email}
-    response = requests.post(url, data=data)
-    print(response.text)
+        if response.status_code !=200:
+            print( f"Error code: {response.status_code}")
+    except Exception as e:
+        print(e)
+        print("Regular request")
+        
+        
     __doc__="""doc for class"""
 __doc__="""doc for module"""
+        
 
-if __name__ == '__main__':
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <URL> <email>")
-        sys.exit(1)
-
-    url = sys.argv[1]
-    email = sys.argv[2]
-    post_email(url, email)
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Please provide a URL as an argument.")
+    else:
+        # url = sys.argv[1]
+        # print(sys.argvd)
+        get_request_id(sys.argv)
