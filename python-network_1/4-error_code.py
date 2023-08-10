@@ -10,10 +10,8 @@ def get_request_id(*argv):
     """
 
     response = requests.get(sys.argv[1])
-    
 
-    if response:
-        print( f"Error code: {response.status_code}")
+    print( f"Error code: {response.status_code}")
 
 
 
