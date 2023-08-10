@@ -5,7 +5,7 @@ def search_user(letter):
     url = "http://0.0.0.0:5000/search_user"
     params = {"q": letter}
     response = requests.post(url, params=params)
-    # print(response)
+    print(response.json)
 
     try:
         data = response.json()
