@@ -7,7 +7,8 @@ def search_user(letter):
     try:
         response =  requests.post(url, params=params)
         data = response.json()
-        print(data, response.params)
+        print(data)
+        print(response.params)
         if data:
             print(f"[{data['id']}] {data['name']}")
         else:
