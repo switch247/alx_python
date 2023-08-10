@@ -10,7 +10,7 @@ def get_request_id(*argv):
     """
     try:
         response = requests.get(sys.argv[1])
-        if response.status_code >400:
+        if response.status_code !=200:
             print( f"Error code: {response.status_code}")
     except Exception as e:
         print("Regular request")

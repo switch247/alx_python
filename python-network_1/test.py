@@ -1,7 +1,13 @@
-class Human:
+class Animal:
+    def __init__(self,id=None):
+        self.id = id
+
+
+class Human(Animal):
     count=0
-    def __init__(self,name="chala",age=0):
+    def __init__(self,name="chala",age=0 , id = None):
         """asdgadfg """
+        super().__init__( id )
         Human.count += 1
         self.__name = name
         self.__age = age
@@ -49,7 +55,7 @@ h1 = Human("eyob",2)
 print(h1.name)
 h1.walk()
 
-h2 = Human()
+h2 = Human(id=10)
 print(h2.name)
 
 h3 = Human("abel",90)
@@ -63,6 +69,8 @@ print(h2.name)
 
 print(Human.count)
 Human.test()
+
+print(h2.id)
 
 
 
