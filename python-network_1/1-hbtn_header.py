@@ -18,16 +18,18 @@ def get_request_id(*argv):
             print(request_id)
         else:
             # "X-Request-Id header not found in the response."
-            print()
+            print(None)
     except requests.exceptions.RequestException as e:
-        pass
+        print(None)
         # print(f"An error occurred: {e}")
     __doc__="""doc for class"""
 __doc__="""doc for module"""
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Please provide a URL as an argument.")
-    else:
-        # url = sys.argv[1]
-        get_request_id(sys.argv)
+    get_request_id(sys.argv)
+
+    # if len(sys.argv) < 2:
+    #     print("Please provide a URL as an argument.")
+    # else:
+    #     # url = sys.argv[1]
+    #     get_request_id(sys.argv)
