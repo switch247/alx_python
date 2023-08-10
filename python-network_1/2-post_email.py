@@ -14,7 +14,7 @@ def get_request_id(*argv):
     # print(f"Email: {email['email']}")
     try:
         response = requests.post(url, data=email)
-        print(response.text)
+        print(response)
     except Exception as e:
         # pass
         print("connection failed")
