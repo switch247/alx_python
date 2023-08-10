@@ -3,6 +3,7 @@ import requests,sys
 def get_request_id(*argv):
     try:
         response = requests.get(sys.argv[1])
+        print(response.headers)
         # print(response.text)
         request_id = response.headers.get('X-Request-Id')
         if request_id:
