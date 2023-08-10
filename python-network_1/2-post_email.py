@@ -9,10 +9,10 @@ def get_request_id(*argv):
     'X-Request-Id' header from the response, and prints it.
     """
     url = (sys.argv[1])
-    email = (sys.argv[2])
-    data = {'email': email}
-    print(f"Email: {data['email']}")
-    response = requests.post(url, data=data)
+    email_ = (sys.argv[2])
+    email = {'email': email_}
+    print(f"Email: {email['email']}")
+    response = requests.post(url, data=email)
     # if response.status_code==200:
     #     print(response.text)
     
