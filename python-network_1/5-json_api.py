@@ -6,16 +6,16 @@ def search_user(letter):
     params = {"q": letter}
     try:
         response =  requests.post(url, params=params)
-        if(response.json()):
-            data = response.json()
-            if data:
-                print(f"[{data['id']}] {data['name']}")
-            else:
-                print("No result")
+        data = response.json()
+        if data:
+            print(f"[{data['id']}] {data['name']}")
         else:
-            print("Not a valid JSON")
+            print("No result")
+        # else:
+            # print("Not a valid JSON")
     except Exception as e:
-        print ("failed to connect")
+        print("Not a valid JSON")
+        # print ("failed to connect")
 
     
 
