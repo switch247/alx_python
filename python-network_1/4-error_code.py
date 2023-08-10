@@ -10,8 +10,9 @@ def get_request_id(*argv):
     """
 
     response = requests.get(sys.argv[1])
-
-    print( f"Error code: {response.status_code}")
+    
+    if(response.status_code>=400):
+        print( f"Error code: {response.status_code}")
 
 
 
