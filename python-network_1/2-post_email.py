@@ -8,16 +8,14 @@ def get_request_id(*argv):
     The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
     'X-Request-Id' header from the response, and prints it.
     """
-    try:
-        url = (sys.argv[1])
-        email = (sys.argv[2])
-        data = {'email': email}
-        response = requests.post(url, data=data)
+    
+    url = (sys.argv[1])
+    email = (sys.argv[2])
+    data = {'email': email}
+    response = requests.post(url, data=data)
+    print(f"Email: {response.text}")
 
-    except Exception as e:
-        print(e)
-        print("Regular request")
-        
+
         
     __doc__="""doc for class"""
 __doc__="""doc for module"""
