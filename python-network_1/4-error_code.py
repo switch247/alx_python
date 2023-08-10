@@ -15,7 +15,9 @@ def get_request_id(*argv):
         else:
             print(response.text)
     except Exception as e:
-        print(type(e))
+        if str(type(e)) == "<class 'requests.exceptions.ConnectionError'>":
+                print("Error code: 401")
+        else: print(type(e)) 
 
 
         
