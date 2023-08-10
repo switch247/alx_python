@@ -11,10 +11,11 @@ def get_request_id(*argv):
     url = (sys.argv[1])
     email_ = (sys.argv[2])
     email = {'email': email_}
-    # print(f"Email: {email['email']}")
     try:
         response = requests.post(url, data=email)
-        print(response)
+        print(response.text)
+        # print(f"Email: {email['email']}") it prints this format(response.text)
+
     except Exception as e:
         # pass
         print("connection failed")
