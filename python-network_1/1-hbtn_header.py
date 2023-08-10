@@ -1,4 +1,5 @@
-import requests,sys
+import requests
+import sys
 def get_request_id(*argv):
     """
     The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
