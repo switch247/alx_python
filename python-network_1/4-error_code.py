@@ -3,13 +3,13 @@ import sys
 
 # The `get_request_id` function is defined to retrieve the value of the `X-Request-Id` header from a
 # HTTP GET request to a specified URL.
-def get_request_id(*argv):
+async def get_request_id(*argv):
     """
     The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
     'X-Request-Id' header from the response, and prints it.
     """
     try:
-        response = requests.get(sys.argv[1])
+        response =await  requests.get(sys.argv[1])
         
         if(response.status_code>=400):
             print( f"Error code: {response.status_code}")
