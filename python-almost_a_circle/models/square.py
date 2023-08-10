@@ -7,7 +7,9 @@ class Square(Rectangle):
         if size<=0:
             raise ValueError('size must be > 0')
         self.size=size
-        super.__init__(self.size,self.size,x,y,id)
+        super().__init__(self.size, self.size, x, y, id)
+
+
     def __str__(self):
         "str method"
         return f"[{__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}"
@@ -16,5 +18,5 @@ __doc__="""doc for module"""
 
 if __name__ == "__main__":
     r= Square(4)
-    print(r)
+    # print(r)
     r.display()
