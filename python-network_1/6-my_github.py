@@ -3,16 +3,12 @@ import sys
 
 def get_user_id(username, password):
     """ read the oficial github docs to get the url"""
-    url = f"https://api.github.com/users/{username}"
+    # url = "https://api.github.com/users"
+    url = 'https://api.github.com/user'
 
-    response = requests.get(url, auth= (username,password))
-
-    if response.status_code == 200:
-        user_data = response.json()
-        return user_data['id']
-    else:
-        # print(f"Error: {response.status_code}")
-        return None
+    # response = get(url, auth = auth.HTTPBasicAuth(username,password))
+    r = requests.get(url, auth=(username, password))
+    print(r.json().get('id'))
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -22,5 +18,10 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
 
-    user_id = get_user_id(username, password)
-    print(f"{user_id}")
+    get_user_id(username, password) 
+    # url = 'https://api.github.com/user'
+    # username = sys.argv[1]
+    # password = sys.argv[2]
+    # r = get(url, auth=auth.HTTPBasicAuth(username, password))
+    # print(r.json().get('id'))
+
