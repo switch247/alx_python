@@ -101,5 +101,11 @@ class Rectangle(Base):
         the rectangle.
         """
         return self.height * self.width
+    def display(self):
+        """displays the rectangle using width and height"""
+        for i in range( self.height):
+            for j in range(self.width):
+                print("#",end='')
+            print()
     __doc__="""doc for class"""
 __doc__="""doc for module"""
