@@ -107,5 +107,12 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#",end='')
             print()
+    def __str__(self):
+        "str method"
+        return f"[{__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
     __doc__="""doc for class"""
 __doc__="""doc for module"""
+
+if __name__ == "__main__":
+    r= Rectangle(1,12)
+    print(r)
