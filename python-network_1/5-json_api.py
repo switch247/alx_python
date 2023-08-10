@@ -7,13 +7,13 @@ def search_user(letter):
     response = requests.post(url, params=params)
     print(response.json)
 
-    try:
+    if(response.json()):
         data = response.json()
         if data:
             print(f"[{data['id']}] {data['name']}")
         else:
             print("No result")
-    except ValueError:
+    else:
         print("Not a valid JSON")
 
 if __name__ == "__main__":
