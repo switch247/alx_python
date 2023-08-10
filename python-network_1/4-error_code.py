@@ -13,7 +13,7 @@ def get_request_id(*argv):
         if response.status_code >400:
             print( f"Error code: {response.status_code}")
     except Exception as e:
-        print("Index")
+        print("Regular request")
     __doc__="""doc for class"""
 __doc__="""doc for module"""
         
