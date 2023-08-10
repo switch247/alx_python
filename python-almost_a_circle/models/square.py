@@ -2,10 +2,10 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ initializer"""
-        if not isinstance(size,int):
-            raise TypeError('size must be an integer')
-        if size<=0:
-            raise ValueError('size must be > 0')
+        # if not isinstance(size,int):
+        #     raise TypeError('size must be an integer')
+        # if size<=0:
+        #     raise ValueError('size must be > 0')
         self.size=size
         super().__init__(self.size, self.size, x, y, id)
 
