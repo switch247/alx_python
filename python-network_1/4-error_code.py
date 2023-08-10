@@ -8,12 +8,13 @@ def get_request_id(*argv):
     The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
     'X-Request-Id' header from the response, and prints it.
     """
+    try:
+        response = requests.get(sys.argv[1])
 
-    response = requests.get(sys.argv[1])
-    
-    if(response.status_code>=400):
-        print( f"Error code: {response.status_code}")
-
+        if(response.status_code>=400):
+            print( f"Error code: {response.status_code}")
+    except Exception as e:
+        print("connection failed")
 
 
         
