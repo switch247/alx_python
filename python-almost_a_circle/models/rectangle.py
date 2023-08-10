@@ -103,7 +103,9 @@ class Rectangle(Base):
         return self.height * self.width
     def display(self):
         """displays the rectangle using width and height"""
+        for y in range(self.y):print()
         for i in range( self.height):
+            print(' '*self.x,end='')
             for j in range(self.width):
                 print("#",end='')
             print()
@@ -114,5 +116,6 @@ class Rectangle(Base):
 __doc__="""doc for module"""
 
 if __name__ == "__main__":
-    r= Rectangle(1,12)
+    r= Rectangle(4,2)
     print(r)
+    r.display()
