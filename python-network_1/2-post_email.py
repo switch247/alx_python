@@ -15,7 +15,8 @@ def get_request_id(*argv):
     try:
         response = requests.post(url, data=email)
     except Exception as e:
-        pass
+        # pass
+        print("connection failed")
     # if response.status_code==200:
     #     print(response.text)
     
