@@ -11,10 +11,11 @@ def get_request_id(*argv):
     url = (sys.argv[1])
     email = (sys.argv[2])
     data = {'email': email}
+    print(f"Email: {data['email']}")
     response = requests.post(url, data=data)
     # if response.status_code==200:
     #     print(response.text)
-    print(f"Email: {data['email']}")
+    
 
 
         
