@@ -109,10 +109,10 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#",end='')
             print()
-    def update(self, *args):
-        """update"""
+    def update(self, *args, **kwargs):
+        """Assigns arguments to each attribute: id, width, height, x, y"""
         if len(args) >= 1:
-            super().__init__(args[0])
+            self.id = args[0]
         if len(args) >= 2:
             self.width = args[1]
         if len(args) >= 3:
@@ -121,6 +121,8 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) >= 5:
             self.y = args[4]
+
+        
     def __str__(self):
         "str method"
         return f"[{__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
