@@ -4,9 +4,10 @@ import requests
 def search_user(letter):
     url = "http://0.0.0.0:5000/search_user"
     params = {"q": letter}
+    print('[89] holberton')
+
     response = requests.post(url, params=params)
     print(response.params)
-    print('[89] holberton')
 
     if(response.json()):
         data = response.json()
