@@ -14,6 +14,8 @@ def get_request_id(*argv):
             print( f"Error code: {response.status_code}")
     except Exception as e:
         print("Index")
+    __doc__="""doc for class"""
+__doc__="""doc for module"""
         
 
 if __name__ == "__main__":
