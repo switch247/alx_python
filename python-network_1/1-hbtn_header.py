@@ -1,6 +1,9 @@
 import requests,sys
-
 def get_request_id(*argv):
+    """
+    The function `get_request_id` sends a GET request to a specified URL, retrieves the value of the
+    'X-Request-Id' header from the response, and prints it.
+    """
     try:
         response = requests.get(sys.argv[1])
         print(response.headers)
