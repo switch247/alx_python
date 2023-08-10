@@ -2,7 +2,7 @@ import sys
 import requests
 def search_user(letter):
     """ test"""
-    url = "http://0.0.0.0:5000/search_user"
+    url = f"http://0.0.0.0:5000/search_user/?q={letter}"
     params = {"q": letter}
     try:
         response =  requests.post(url, params=params)
