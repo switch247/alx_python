@@ -15,11 +15,6 @@ def get_request_id(*argv):
     if request_id:
         # print(f"The value of X-Request-Id is: {request_id}")
         print(request_id)
-    else:
-        pass
-        # "X-Request-Id header not found in the response."
-        # print(None)
-        # print(f"An error occurred: {e}")
     __doc__="""doc for class"""
 __doc__="""doc for module"""
 
