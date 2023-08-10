@@ -1,5 +1,12 @@
 import requests
 import sys
+"""
+The `post_email` function sends a POST request to a specified URL with an email parameter.
+
+:param url: The URL where the email will be posted
+:param email: The email parameter is the email address that will be sent in the POST request to the
+specified URL
+"""
 
 def post_email(url=sys.argv[1], email=sys.argv[2]):
     """ffhh"""
