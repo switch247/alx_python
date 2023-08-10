@@ -1,12 +1,11 @@
 import sys
 import requests
-
-async def search_user(letter):
+def search_user(letter):
     """ test"""
     url = "http://0.0.0.0:5000/search_user"
     params = {"q": letter}
     try:
-        response = await requests.post(url, params=params)
+        response =  requests.post(url, params=params)
         if(response.json()):
             data = response.json()
             if data:

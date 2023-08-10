@@ -7,8 +7,6 @@ def get_user_id(username, password):
 
     response = requests.get(url, auth= (username,password))
 
-    if username =='papamuziko' and  password == 'wrong_pwd':
-        return None
     if response.status_code == 200:
         user_data = response.json()
         return user_data['id']
