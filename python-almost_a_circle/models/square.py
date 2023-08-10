@@ -6,22 +6,20 @@ class Square(Rectangle):
         super().__init__(self.size, self.size, x, y, id)
     @property
     def size(self):
-        return self.size
+        return self._width
 
     @size.setter
     def size(self, value):
-        # if not isinstance(value,int):
-        #     raise TypeError('width must be an integer')
-        # if value<=0:
-        #     raise ValueError('width must be > 0')
-        super.width(value)
-        # self._width = value
-        # if not isinstance(value,int):
-        #     raise TypeError('height must be an integer')
-        # if value<=0:
-        #     raise ValueError('height must be > 0')
-        super.height(value)
-        # self._height = value
+        if not isinstance(value,int):
+            raise TypeError('width must be an integer')
+        if value<=0:
+            raise ValueError('width must be > 0')
+        self._width = value
+        if not isinstance(value,int):
+            raise TypeError('height must be an integer')
+        if value<=0:
+            raise ValueError('height must be > 0')
+        self._height = value
 
 
     def __str__(self):
