@@ -14,4 +14,15 @@ try:
 except requests.exceptions.RequestException as e:
     print(f"An error occurred: {e}")
 
+
+
+
+# if __name__ == "__main__":
+    # if len(sys.argv) < 2:
+    #     print("Please provide a URL as an argument.")
+    # else:
+        # url = sys.argv[1]
+        # get_request_id(sys.argv)
+
 __doc__="""doc for module"""
+
