@@ -9,11 +9,11 @@ def get_request_id(*argv):
     'X-Request-Id' header from the response, and prints it.
     """
     try:
-        response = requests.get(sys.argv[1])
-        print(response.text)
+        url = (sys.argv[1])
+        email = (sys.argv[2])
+        data = {'email': email}
+        response = requests.post(url, data=data)
 
-        if response.status_code !=200:
-            print( f"Error code: {response.status_code}")
     except Exception as e:
         print(e)
         print("Regular request")
