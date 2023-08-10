@@ -6,6 +6,7 @@ def search_user(letter):
     params = {"q": letter}
     response = requests.post(url, params=params)
     print(response.params)
+    print('[89] holberton')
 
     if(response.json()):
         data = response.json()
