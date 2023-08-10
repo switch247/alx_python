@@ -17,6 +17,8 @@ def get_request_id(*argv):
             print("X-Request-Id header not found in the response.")
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
+__doc__="""doc for module"""
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
