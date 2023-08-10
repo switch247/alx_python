@@ -10,11 +10,11 @@ def get_request_id(*argv):
     """
     try:
         response =  requests.get(sys.argv[1])
-        
         if response.status_code==200:
             print(response.text)
-        else:
+        if response.status_code>=400:
             print( f"Error code: {response.status_code}")
+        
     except Exception as e:
         if str(type(e)) == "<class 'requests.exceptions.ConnectionError'>":
                 print("Error code: 401")
