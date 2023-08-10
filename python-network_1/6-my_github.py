@@ -11,7 +11,7 @@ def get_user_id(username, password):
         user_data = response.json()
         return user_data['id']
     else:
-        print(f"Error: {response.status_code}")
+        # print(f"Error: {response.status_code}")
         return None
 
 if __name__ == "__main__":
@@ -23,5 +23,4 @@ if __name__ == "__main__":
     password = sys.argv[2]
 
     user_id = get_user_id(username, password)
-    if user_id:
-        print(f"{user_id}")
+    print(f"{user_id}")
