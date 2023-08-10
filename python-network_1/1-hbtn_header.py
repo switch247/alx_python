@@ -18,7 +18,7 @@ def get_request_id(*argv):
             print(request_id)
         else:
             # "X-Request-Id header not found in the response."
-            print(None)
+            # print(None)
     except requests.exceptions.RequestException as e:
         print(None)
         # print(f"An error occurred: {e}")
