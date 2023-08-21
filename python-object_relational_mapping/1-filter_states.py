@@ -19,18 +19,22 @@ import MySQLdb
 # r.fetch_row(maxrows=0)
 # print(MySQLdb.__version__)
 # print(sqlalchemy.__version__)
+
+
 def dostg():
     # Open database connection
     u = sys.argv[1]
     p = sys.argv[2]
     d = sys.argv[3]
-    # db = MySQLdb.connect(host="localhost", user=u, password=p, database=d, port=3306,collation = "utf8mb4_general_ci")
+    # db = MySQLdb.connect(host="localhost", user=u, password=p,
+    # database=d, port=3306,collation = "utf8mb4_general_ci")
     db = MySQLdb.connect("localhost", u, p, d, 3306)
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
+    cursor.execute("""SELECT * FROM states 
+                   WHERE name LIKE 'N%' ORDER BY id ASC;""")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
