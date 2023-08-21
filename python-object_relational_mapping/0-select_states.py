@@ -28,7 +28,7 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states ORDER ACS`states.id`")
+    cursor.execute("SELECT * FROM states")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
