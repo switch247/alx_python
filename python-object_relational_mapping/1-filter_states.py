@@ -1,7 +1,6 @@
 import sys
 import MySQLdb
 
-
 # import sqlalchemy
 # import pymysql
 # pymysql.install_as_MySQLdb()
@@ -23,15 +22,15 @@ import MySQLdb
 def dostg():
     # Open database connection
     u = sys.argv[1]
-    p =sys.argv[2]
-    d= sys.argv[3]
-    db = MySQLdb.connect("localhost", u, p, d, 3306)
+    p = sys.argv[2]
+    d = sys.argv[3]
+    db = MySQLdb.connect(host = "localhost", user = u, password = p, database = d, port = 3306,collation = "utf8mb4_general_ci")
 
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' COLLATE Latin1_General_CS_AS;")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'COLLATE Latin1_General_CS_AS ORDER BY id ASC;")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()

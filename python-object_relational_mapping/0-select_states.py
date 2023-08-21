@@ -23,8 +23,8 @@ import MySQLdb
 def dostg():
     # Open database connection
     u = sys.argv[1]
-    p =sys.argv[2]
-    d= sys.argv[3]
+    p = sys.argv[2]
+    d = sys.argv[3]
     db = MySQLdb.connect("localhost", u, p, d, 3306)
 
     # prepare a cursor object using cursor() method
