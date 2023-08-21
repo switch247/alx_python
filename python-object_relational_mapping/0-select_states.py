@@ -28,11 +28,11 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states")
+    cursor.execute("SELECT * FROM states  ORDER BY id ASC;")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
-    print ( ( data[0] ) )
+    print ( data ,sep='\n' )
 
     # disconnect from server
     db.close()
