@@ -33,7 +33,7 @@ def dostg():
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
-        print ( i ,sep='\n' )
+        print ( i , sep='\n' )
 
     # disconnect from server
     db.close()
