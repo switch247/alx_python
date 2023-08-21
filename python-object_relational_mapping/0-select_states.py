@@ -31,8 +31,8 @@ def dostg():
     cursor.execute("SELECT * FROM states")
 
     # Fetch a single row using fetchone() method.
-    data = cursor.fetchall()
-    print (data.fetch_row())
+    data = cursor.fetch_row()
+    print (data)
 
     # disconnect from server
     db.close()
