@@ -30,10 +30,11 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("ALTER TABLE states MODIFY COLUMN name VARCHAR(250) COLLATE Latin1_General_CS_AS")
+    # cursor.execute("ALTER TABLE states MODIFY COLUMN name VARCHAR(250) COLLATE Latin1_General_CS_AS")
 
-    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(sys.argv[4]))
+    cursor.execute("SELECT PASS FROM states WHERE PASS COLLATE Latin1_General_CS_AS  name = '{}' ORDER BY id ASC; ".format(sys.argv[4]))
 
+#  "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format()
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
