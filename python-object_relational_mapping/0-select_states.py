@@ -22,7 +22,7 @@ import MySQLdb
 # print(sqlalchemy.__version__)
 def dostg():
     # Open database connection
-    db = MySQLdb.connect("localhost",sys.argv[1],sys.argv[2],sys.argv[3],3306 )
+    db = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306 )
 
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
@@ -40,4 +40,3 @@ def dostg():
 
 if __name__ == "__main__":
     dostg()
-
