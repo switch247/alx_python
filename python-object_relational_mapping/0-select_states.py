@@ -1,8 +1,10 @@
 import sys
-import sqlalchemy
-import pymysql
-pymysql.install_as_MySQLdb()
-import pymysql as MySQLdb
+# import sqlalchemy
+# import pymysql
+# pymysql.install_as_MySQLdb()
+# import pymysql as MySQLdb
+
+import MySQLdb
 # import MySQLdb import _mysql
 # from MySQLdb.constants import FIELD_TYPE
 # Define the database connection details
@@ -16,8 +18,8 @@ import pymysql as MySQLdb
 # # r=db.use_result()
 
 # r.fetch_row(maxrows=0)
-print(MySQLdb.__version__) 
-print(sqlalchemy.__version__)
+# print(MySQLdb.__version__) 
+# print(sqlalchemy.__version__)
 def dostg():
     # Open database connection
     db = MySQLdb.connect("localhost",sys.argv[1],sys.argv[2],sys.argv[3],3306 )
