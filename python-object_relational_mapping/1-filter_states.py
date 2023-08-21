@@ -28,7 +28,7 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states  ORDER BY id ASC;")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
