@@ -24,7 +24,7 @@ def dostg():
     u = sys.argv[1]
     p = sys.argv[2]
     d = sys.argv[3]
-    db = MySQLdb.connect(host = "localhost", user = u, password = p, database = d, port = 3306,collation = "utf8mb4_general_ci")
+    db = MySQLdb.connect(host="localhost", user=u, password=p, database=d, port=3306,collation = "utf8mb4_general_ci")
 
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
@@ -35,7 +35,8 @@ def dostg():
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
-        print(i, sep="\n")
+        if(i[0]!='n'):
+            print(i, sep="\n")
 
     # disconnect from server
     db.close()
