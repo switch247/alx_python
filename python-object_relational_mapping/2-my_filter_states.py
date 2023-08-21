@@ -32,7 +32,8 @@ def dostg():
     # execute SQL query using execute() method.
     # cursor.execute("ALTER TABLE states MODIFY COLUMN name VARCHAR(250) COLLATE Latin1_General_CS_AS")
 
-    cursor.execute("SELECT * FROM states WHERE name COLLATE Latin1_General_CS_AS = '{}' ORDER BY id ASC; ".format(sys.argv[4]))
+    cursor.execute("""SELECT *
+FROM states WHERE name COLLATE latin1_general_cs = '{}' ORDER BY id ASC; """.format(sys.argv[4]))
 
 #  "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format()
     # Fetch a single row using fetchone() method.
