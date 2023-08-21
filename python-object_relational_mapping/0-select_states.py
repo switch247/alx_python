@@ -1,10 +1,9 @@
 import sys
+import MySQLdb
 # import sqlalchemy
 # import pymysql
 # pymysql.install_as_MySQLdb()
 # import pymysql as MySQLdb
-
-import MySQLdb
 # import MySQLdb import _mysql
 # from MySQLdb.constants import FIELD_TYPE
 # Define the database connection details
@@ -16,19 +15,18 @@ import MySQLdb
 # r=db.store_result()
 # # ...or...
 # # r=db.use_result()
-
 # r.fetch_row(maxrows=0)
 # print(MySQLdb.__version__) 
 # print(sqlalchemy.__version__)
 def dostg():
     # Open database connection
-    db = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306 )
+    db = MySQLdb.connect( "localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306 )
 
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states  ORDER BY id ASC;")
+    cursor.execute( "SELECT * FROM states  ORDER BY id ASC;" )
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
