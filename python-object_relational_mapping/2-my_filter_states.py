@@ -30,7 +30,7 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states WHERE name= {} ORDER BY id ASC;".format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name IS EQUALS{} ORDER BY id ASC;".format(sys.argv[4]))
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
