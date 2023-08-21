@@ -30,13 +30,12 @@ def dostg():
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
+    cursor.execute(f"SELECT * FROM states WHERE name= {sys.argv[4]} ORDER BY id ASC;")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
-        if(i[1][0]!='n'):
-            print(i, sep="\n")
+        print(i, sep="\n")
 
     # disconnect from server
     db.close()
