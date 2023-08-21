@@ -35,7 +35,7 @@ def dostg():
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
-        if(i[0]!='n'):
+        if(i[1][0]!='n'):
             print(i, sep="\n")
 
     # disconnect from server
