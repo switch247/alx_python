@@ -22,22 +22,22 @@ import MySQLdb
 # print(sqlalchemy.__version__)
 def dostg():
     # Open database connection
-    db = MySQLdb.connect( "localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306 )
+    db = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306)
 
     # prepare a cursor object using cursor() method
-    cursor = db.cursor( )
+    cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    cursor.execute( "SELECT * FROM states WHERE name LIKE 'N%'  ORDER BY id ASC;" )
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' COLLATE SQL_Latin1_General_CP1_CS_AS  ORDER BY id ASC;")
 
     # Fetch a single row using fetchone() method.
-    data = cursor.fetchall( )
+    data = cursor.fetchall()
     for i in data:
-        print( i, sep="\n" )
+        print(i, sep="\n")
 
     # disconnect from server
     db.close()
 
 
 if __name__ == "__main__":
-    dostg( )
+    dostg()
