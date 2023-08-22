@@ -26,15 +26,15 @@ def dostg():
     u = sys.argv[1]
     p = sys.argv[2]
     d = sys.argv[3]
-    # db = MySQLdb.connect(host="localhost", user=u, password=p, 
+    # db = MySQLdb.connect(host="localhost", user=u, password=p,
     # database=d, port=3306,collation = "utf8mb4_general_ci")
     db = MySQLdb.connect("localhost", u, p, d, 3306)
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # execute SQL query using execute() method.
-    # cursor.execute("ALTER TABLE states MODIFY COLUMN 
-    # name VARCHAR(250) COLLATE Latin1_General_CS_AS")
+    # cursor.execute("ALTER TABLE states MODIFY COLUMN
+    #name VARCHAR(250) COLLATE Latin1_General_CS_AS")
 
     cursor.execute("""SELECT *
 FROM states WHERE name  = '{}'
