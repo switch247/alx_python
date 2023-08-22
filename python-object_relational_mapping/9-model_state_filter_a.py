@@ -18,10 +18,11 @@ def doit(username, password, database):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query the first State object
-    result = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
-
-    print("{}: {}".format(result.id, result.name))
+    # Query the database for State objects containing the letter 'a'
+    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    # Print the results
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
 
     # Close the session
     session.close()
