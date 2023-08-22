@@ -37,14 +37,15 @@ def dostg():
     # name VARCHAR(250) COLLATE Latin1_General_CS_AS")
 
     cursor.execute("""SELECT *
-FROM states WHERE name COLLATE 
-latin1_general_cs = '{}' ORDER BY id ASC; """.format(sys.argv[4]))
-
+FROM states WHERE name  = '{}'
+ORDER BY id ASC; """.format(sys.argv[4]))
+# COLLATE latin1_general_cs
 #  "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format()
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
     for i in data:
-        print(i, sep="\n")
+        if i[1] == sys.argv[4]:
+            print(i, sep="\n")
 
     # disconnect from server
     db.close()
