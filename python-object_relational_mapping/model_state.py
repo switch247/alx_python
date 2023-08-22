@@ -5,13 +5,12 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-# The class "State" is a subclass of "Base".
 class State(Base):
     __tablename__ = 'states'
     id = Column("id",Integer, primary_key=True,
     autoincrement=True, nullable=False)
     name = Column("name",String(128), nullable=False)
-
+    __doc__="""doc for class"""
 State.__table__
 State.__mapper__
 
