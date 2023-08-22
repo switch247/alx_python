@@ -1,6 +1,7 @@
 import MySQLdb
 import sys
 
+
 def search_states(username, password, database, state_name):
     try:
         # Connect to MySQL server
