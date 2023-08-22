@@ -5,6 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
+# The class "State" is a subclass of "Base".
 class State(Base):
     __tablename__ = 'states'
     id = Column("id",Integer, primary_key=True,
