@@ -16,7 +16,7 @@ def search_states(username, password, database, state_name):
         cursor = conn.cursor()
 
         # Prepare the SQL query with a parameterized query
-        query = "SELECT * FROM states WHERE name = %s"
+        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC; "
 
         # Execute the query with the state name as a parameter
         cursor.execute(query, (state_name,))
@@ -29,7 +29,8 @@ def search_states(username, password, database, state_name):
             for row in rows:
                 print(row)
         else:
-            print("No matching states found.")
+            # print("No matching states found.")
+            pass
 
         # Close the cursor and connection
         cursor.close()
@@ -40,7 +41,7 @@ def search_states(username, password, database, state_name):
         sys.exit(1)
 
 if __name__ == "__main__":
-       # Get the arguments
+    # Get the arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
