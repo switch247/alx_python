@@ -19,7 +19,8 @@ def doit(username, password, database):
     session = Session()
 
     # Query the database for State objects containing the letter 'a'
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = session.query(State).filter(
+        State.name.like('%a%')).order_by(State.id).all()
     # Print the results
     for state in states:
         print("{}: {}".format(state.id, state.name))
