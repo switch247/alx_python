@@ -34,7 +34,7 @@ def dostg():
 
     # execute SQL query using execute() method.
     # cursor.execute("ALTER TABLE states MODIFY COLUMN
-    #name VARCHAR(250) COLLATE Latin1_General_CS_AS")
+    # name VARCHAR(250) COLLATE Latin1_General_CS_AS")
 
     cursor.execute("""SELECT *
 FROM states WHERE name  = '{}'
