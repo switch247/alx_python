@@ -18,7 +18,7 @@ def search_states(username, password, database,state_name):
 
         # Prepare the SQL query with a parameterized query
         query = """SELECT  cities.name FROM cities  INNER JOIN states ON
-        cities.state_id = states.id WHERE states = %s ORDER BY id ASC; """
+        cities.state_id = states.id WHERE states.name = %s ORDER BY id ASC; """
 
         # Execute the query with the state name as a parameter
         cursor.execute(query,(state_name,))
