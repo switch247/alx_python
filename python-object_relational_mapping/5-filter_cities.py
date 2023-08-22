@@ -19,7 +19,7 @@ def search_states(username, password, database, state_name):
         # Prepare the SQL query with a parameterized query
         query = """SELECT  cities.name FROM states
         INNER JOIN cities ON
-        cities.state_id = states.id WHERE states.name = %s 
+        cities.state_id = states.id WHERE states.name = %s
         ORDER BY cities.id ASC; """
 
         # Execute the query with the state name as a parameter
@@ -31,7 +31,7 @@ def search_states(username, password, database, state_name):
         # Display the results
         if rows:
             for row in rows:
-                print(row)
+                print(row[0], sep=', ')
         else:
             # print("No matching states found.")
             pass
