@@ -8,9 +8,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-def doit(username, password, database ):
+
+def doit(username, password, database):
     # Create the engine
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{database}")
+    x= f"""mysql+mysqldb://{username}:{password}@localhost:3306/{database}"""
+    engine = create_engine(x)
 
     # Create a session
     Session = sessionmaker(bind=engine)
@@ -33,6 +35,3 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
     doit(username, password, database)
-
-    
-
