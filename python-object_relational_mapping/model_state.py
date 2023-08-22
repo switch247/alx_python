@@ -11,8 +11,9 @@ class State(Base):
     autoincrement=True, nullable=False)
     name = Column("name",String(128), nullable=False)
     __doc__="""doc for class"""
-State.__table__
-State.__mapper__
+
+# State.__table__
+# State.__mapper__
 
 # access the mapped Table
 # print(State.__table__)
