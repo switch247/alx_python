@@ -12,7 +12,7 @@ from model_state import Base, State
 def doit(username, password, database):
     # Create the engine
     x = f"""mysql+mysqldb://{username}:{password}@localhost:3306/{database}"""
-    engine = create_engine(x,pool_pre_ping=True)
+    engine = create_engine(x, pool_pre_ping=True)
 
     # Create a session
     Session = sessionmaker(bind=engine)
