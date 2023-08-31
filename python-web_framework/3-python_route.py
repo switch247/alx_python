@@ -16,7 +16,8 @@ def c_text(text):
 
 @app.route('/python/<text>', strict_slashes=False)
 def py_text(text):
-    return 'Python {}'.format(text.replace('_',' ')) if text else  'Python is cool'
+    text =text if text else 'is cool'
+    return 'Python {}'.format(text.replace('_',' ')) 
 
 
 if __name__ == '__main__':
