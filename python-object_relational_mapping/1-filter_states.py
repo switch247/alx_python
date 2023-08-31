@@ -34,7 +34,7 @@ def dostg():
 
     # execute SQL query using execute() method.
     cursor.execute("""SELECT * FROM states
-                   WHERE name LIKE 'N%' ORDER BY id ASC;""")
+                   WHERE name LIKE BINARY 'N%' ORDER BY id ASC;""")
 
     # Fetch a single row using fetchone() method.
     data = cursor.fetchall()
