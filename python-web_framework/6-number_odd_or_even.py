@@ -31,7 +31,7 @@ def templete_one(n):
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def templete_two(n):
-    even_odd = 'even' if (n%2==0) else 'odd'
+    even_odd = 'even' if ( n%2 == 0 ) else 'odd'
     return render_template('5-number.html', number=n ,even_odd =even_odd )
 
 
