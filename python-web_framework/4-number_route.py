@@ -20,10 +20,9 @@ def c_text(text):
 def py_text(text):
     return 'Python {}'.format(text.replace('_',' ')) 
 
-@app.route('/number/<n>', strict_slashes=False)
-def _num(n):
-    if n.isInt():
-        return f'{n} is a number'
+@app.route('/number/<int:n>', strict_slashes=False)
+def check_number(n):
+    return f'{n} is a number'
 
 
 if __name__ == '__main__':
