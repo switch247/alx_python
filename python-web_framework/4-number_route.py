@@ -22,7 +22,7 @@ def py_text(text):
 
 @app.route('/number/<n>', strict_slashes=False)
 def _num(n):
-    return n if n.isInt() else  None
+    return f'{n} is a number' if n.isInt() else  None
 
 
 if __name__ == '__main__':
