@@ -9,7 +9,7 @@ def export_todo(id:int):
     
     y = requests.get(todo_url)
     json_data_2 = y.json()
-    print(json_data_2)
+    # print(json_data_2)
     csv_file= f'{id}.csv'
     with open(csv_file,'w') as csvFile:
         writer = csv.writer(csvFile)
