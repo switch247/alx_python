@@ -1,28 +1,49 @@
-import requests,sys,json
+"""
+This script uses an API to retrieve employee task information
+and display in a special format.
 
-def export_todo(id:int):
-    url = f'https://jsonplaceholder.typicode.com/users/{id}'
-    todo_url = f'https://jsonplaceholder.typicode.com/users/{id}/todos'
-    x = requests.get(url)
-    json_data = x.json()
-    EMPLOYEE_NAME = json_data['name']
-    
-    y = requests.get(todo_url)
-    data = y.json()
-    # Filter tasks owned by the employee
-    filtered_tasks = [task for task in data if task['userId'] == id]
+It retrieves employees name, task completed with their titles.
+"""
+import json
+import requests
+import sys
 
-    # Prepare the data in the desired format
-    formatted_data = {str(id): [{'task': task['title'], 'completed': task['completed'], 'username': EMPLOYEE_NAME} for task in filtered_tasks]}
-
-    # Save the data as a JSON file
-    file_name = f"{id}.json"
-    with open(file_name, 'w') as file:
-        json.dump(formatted_data, file)
-
-    # print(f"Data saved to {file_name}")
-    __doc__="""doc for class"""
-__doc__="""doc for module"""
+# No execution of this file when imported
 if __name__ == "__main__":
-    id = int(sys.argv[1])
-    export_todo(id)
+
+    # Pass employee id on command line
+    id = sys.argv[1]
+
+# APIs
+    userTodoURL = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+        id)
+    userProfile = "https://jsonplaceholder.typicode.com/users/{}".format(id)
+
+# Make requests on APIs
+    todoResponse = requests.get(userTodoURL)
+    profileResponse = requests.get(userProfile)
+
+# Parse responses and store in variables
+    todoJson_Data = todoResponse.json()
+    profileJson_Data = profileResponse.json()
+
+# Get employee information
+    employeeName = profileJson_Data['username']
+
+    dataList = []  # Empty list to store the dictionaries
+
+    for data in todoJson_Data:
+        dataDict = {
+            "task": data['title'], "completed": data['completed'], "username": employeeName}
+        dataList.append(dataDict)
+
+# A dictionary of list of dictionaries to be exported to JSON
+    outputData = {profileJson_Data['id']: dataList}
+
+# Specify the JSON file path
+    json_file_path = '{}.json'.format(todoJson_Data[0]['userId'])
+
+# Open the JSON file in write mode
+    with open(json_file_path, 'w') as json_file:
+        # Serialize and write the data to the JSON file
+        json.dump(outputData, json_file)
