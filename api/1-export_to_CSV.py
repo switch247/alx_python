@@ -12,7 +12,7 @@ def export_todo(id:int):
     # print(json_data_2)
     csv_file= f'{id}.csv'
     with open(csv_file,'w') as csvFile:
-        writer = csv.writer(csvFile)
+        writer = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
         for i in json_data_2:
             writer.writerow([str(i['userId']),str(EMPLOYEE_NAME),str(i['completed']),str(i['title'])])
     __doc__="""doc for class"""

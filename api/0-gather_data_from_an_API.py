@@ -17,7 +17,7 @@ def get_todo(id:int):
     print(f'Employee {EMPLOYEE_NAME} is done with tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):')
     for i in json_data_2:
         if i['completed']==True:
-            print(f"     {i['title']}")
+            print(f"\t {i['title']}")
     __doc__="""doc for class"""
 __doc__="""doc for module"""
 if __name__ == "__main__":
